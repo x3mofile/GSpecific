@@ -12,7 +12,7 @@ namespace x3.GSpecific.Border
         {
             NextBorder= nextBorder;
         }
-        public ISomeBorder SomeBorder => new Border_ForThisImplementation(NextBorder.Box());
+        public ISomeBorder SomeBorder() => new Border_ForThisImplementation(NextBorder.Box());
     }
 
 

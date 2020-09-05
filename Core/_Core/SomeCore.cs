@@ -1,4 +1,5 @@
-﻿using x3.Infrastructure;
+﻿using System;
+using x3.Infrastructure;
 
 namespace x3.GSpecific
 {
@@ -7,10 +8,10 @@ namespace x3.GSpecific
         private readonly ValueObject InfrastructureDependency;
         private readonly ISomeBorder SomeBorder;
 
-        public SomeCore(ISomeBorder someBorder)
+        public SomeCore(Func<ISomeBorder> resolvesSomeBorder)
         {
             InfrastructureDependency= new ValueObject("x");
-            SomeBorder=someBorder;
+            SomeBorder=resolvesSomeBorder.Invoke();
         }
 
         public void Do()

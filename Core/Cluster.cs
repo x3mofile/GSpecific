@@ -28,7 +28,7 @@ namespace x3.GSpecific
 
     public interface ICluster1_Border
     {
-        ISomeBorder SomeBorder { get; }
+        ISomeBorder SomeBorder ();
     }
 
 
